@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Flyport online webserver</title>
+<script type="text/javascript" src="scripts/mchp.js"></script>
+</head>
+<body>
+
+<div align="center">
+
+If this page loads you’re good to go.
+<br><p id="keyword">a</p>
+</div>
+<div style="text-align:center;">
+
+<button type="button" onclick="newAJAXCommand('leds.cgi?led=0&value=1&led=2&value=3&gino=4&led=5&value=6&led=7&value=8');">Toggle Led</button> 
+
+
+</div>
+<script type="text/javascript">
+
+<!--
+
+// Parses the xmlResponse from status.xml and updates the status box
+
+function updateStatus(xmlData) {    
+
+   document.getElementById('keyword').innerHTML = getXMLValue(xmlData, 'keyword');
+
+}
+
+setTimeout("newAJAXCommand('status.xml', updateStatus, true)",125);
+
+//-->
+</script>
+</body>
+
+</html>
